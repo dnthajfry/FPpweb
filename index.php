@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user_name'])) {
+    $nama = $_SESSION['user_name'];
+} else {
+    $nama = "Tamu";
+}
+?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -153,7 +162,7 @@
         }
 
         .learning-path {
-            background-color: #28a745; /* Green */
+            background-color: #28a745; 
         }
 
         .learning-path:hover {
@@ -161,7 +170,7 @@
         }
 
         .certification {
-            background-color: #ffc107; /* Yellow */
+            background-color: #ffc107;  
         }
 
         .certification:hover {
@@ -170,27 +179,32 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+
     <div class="navbar">
         <div class="left">
-            <a href="#">Nama Website</a>
+            <a href="index.php">Ojo Lali Sinau</a>
 
             <a href="index.php">Home</a>
             <a href="learning.php" class="btn">Learning Path</a>
             <a href="sertifikasi.php" class="btn">Sertifikasi</a>
         </div>
         
+
         <div class="navbar-right">
-        <a href="form-masuk.php" class="btn navbar-right">Masuk</a>
-        <a href="form-daftar.php" class="btn navbar-right">Daftar</a>
-        Selamat Datang, <strong>Nama User</strong>
-    </div>
+        
+        <?php if (isset($_SESSION['user_id'])): ?>
+            Selamat Datang, <strong class="text-black"><?php echo htmlspecialchars($nama); ?></strong>
+            <a href="logout.php" class="btn navbar-right">Logout</a>
+        <?php else: ?>
+            <a href="form-masuk.php" class="btn navbar-right">Masuk</a>
+            <a href="form-daftar.php" class="btn navbar-right">Daftar</a>
+        <?php endif; ?>    
+    
+        </div>
     </div>
 
-    <!-- Body -->
     <div class="container">
         <div class="content">
-            <!-- Left Content -->
             <div class="left-content">
                 <div class="slogan">
                     <h1>Selamat Datang di Platform Belajar Kami</h1>

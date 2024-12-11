@@ -134,7 +134,7 @@
     <!-- Navbar -->
     <div class="navbar">
         <div class="left">
-            <a href="#">Home</a>
+            <a href="index.php">Home</a>
             <a href="#">Learning Path</a>
             <a href="#">Certification</a>
         </div>
@@ -178,21 +178,17 @@
                 </div>
             </div>
 
-            <!-- Descriptions (Right Column) -->
             <div class="descriptions">
-                <!-- Description for Step 1 -->
                 <div class="info-section">
                     <h3>Langkah Pertama</h3>
                     <p>Langkah pertama untuk menjadi seorang Android Developer dengan mempelajari bahasa yang direkomendasikan oleh Google.</p>
                 </div>
 
-                <!-- Description for Step 2 -->
                 <div class="info-section">
                     <h3>Membuat Aplikasi Sendiri</h3>
                     <p>Buat aplikasi pertama dengan memahami dasar-dasar membuat tampilan dan logika aplikasi.</p>
                 </div>
 
-                <!-- Description for Step 3 -->
                 <div class="info-section">
                     <h3>Membangun Fundamental</h3>
                     <p>Perdalam keahlianmu di dunia pemrograman Android dengan mempelajari cara membuat aplikasi yang dapat mengirim data dari server ke database.</p>

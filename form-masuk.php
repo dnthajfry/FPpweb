@@ -33,12 +33,11 @@
                 <label for="Email">Email:</label>
                 <input type="email" name="Email" placeholder="Masukkan Email" class="form-control" required>
             </div>
-            <!-- Password -->
             <div class="mb-3">
                 <label for="Password">Password:</label>
                 <input type="password" name="Password" placeholder="Masukkan Password" class="form-control" required>
             </div>
-            <!-- Tombol Login -->
+            <!-- SUBMIT -->
             <div class="text-center">
                 <button type="submit" name="login" class="btn btn-primary">Masuk</button>
             </div>
