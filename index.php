@@ -1,20 +1,26 @@
 <?php
 session_start();
 
+// Get user name from session
 if (isset($_SESSION['user_name'])) {
     $nama = $_SESSION['user_name'];
 } else {
     $nama = "Tamu";
 }
+
+// Fetch materials from database
+//$sql = "SELECT * FROM materials";
+//$result = $conn->query($sql);
+
 ?>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ojo Lali Sinau</title>
-        <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ojo Lali Sinau</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -81,6 +87,7 @@ if (isset($_SESSION['user_name'])) {
             flex: 1;
         }
 
+        
         .right-content {
             max-width: 1200px;
             margin: 50px auto;
@@ -176,6 +183,51 @@ if (isset($_SESSION['user_name'])) {
         .certification:hover {
             background-color: #e0a800;
         }
+
+        /* Materi */
+        .materi {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .materi .materi-item {
+            background-color: #fff;
+            padding: 20px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer; /* Tambahkan cursor pointer */
+        }
+
+        .materi .materi-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .materi .materi-item h2 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .materi .materi-item p {
+            font-size: 14px;
+            color: #666;
+        }
+        .materi-item:hover {
+            transform: scale(1.03);
+            background-color: #f0f0f0;
+             cursor: pointer;
+}
     </style>
 </head>
 <body>
@@ -218,11 +270,29 @@ if (isset($_SESSION['user_name'])) {
 
             <!-- Right Content -->
             <div class="right-content">
-                <img src="https://via.placeholder.com/200x300" alt="Gambar 1">
-                <img src="https://via.placeholder.com/200x300" alt="Gambar 2">
+                <img src="image/gambar1.jpg" alt="Gambar 1">
+                <img src="image/gambar2.jpg" alt="Gambar 2">
             </div>
         </div>
     </div>
-    </body>
-    </html>
 
+    <!-- Materi -->
+    <div class="materi">
+        <button class="materi-item" onclick="location.href='materi1.php'">
+            <img src="https://via.placeholder.com/200x150" alt="Materi 1">
+            <h2>Materi 1</h2>
+            <p>Deskripsi materi 1</p>
+        </button>
+        <button class="materi-item" onclick="location.href='materi2.php'">
+            <img src="https://via.placeholder.com/200x150" alt="Materi 2">
+            <h2>Materi 2</h2>
+            <p>Deskripsi materi 2</p>
+        </button>
+        <button class="materi-item" onclick="location.href='materi3.php'">
+            <img src="https://via.placeholder.com/200x150" alt="Materi 3">
+            <h2>Materi 3</h2>
+            <p>Deskripsi materi 3</p>
+        </button>
+    </div>
+</body>
+</html>
