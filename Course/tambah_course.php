@@ -1,6 +1,5 @@
 
 <?php
-if (basename($_SERVER['PHP_SELF']) === 'add_course.php') {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $title = $_POST['title'];
         $content_url = $_POST['content_url'];
@@ -16,7 +15,7 @@ if (basename($_SERVER['PHP_SELF']) === 'add_course.php') {
         } else {
             echo "Error: " . $conn->error;
         }
-    }
+    
 
     $sqlLearningPaths = "SELECT * FROM LearningPaths";
     $resultLearningPaths = $conn->query($sqlLearningPaths);
@@ -26,12 +25,12 @@ if (basename($_SERVER['PHP_SELF']) === 'add_course.php') {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Add Course</title>
+        <title>Tambah Modul</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     </head>
     <body>
     <div class="container my-5">
-        <h1>Add New Course</h1>
+        <h1>Tambah Modul</h1>
         <form action="tambah_course.php" method="POST">
             <div class="mb-3">
                 <label for="title" class="form-label">Course Title</label>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user_name'])) {
+    $nama = $_SESSION['user_name'];
+} else {
+    $nama = "Tamu";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,12 +144,13 @@
     <!-- Navbar -->
     <div class="navbar">
         <div class="left">
-            <a href="#">Home</a>
-            <a href="#">Learning Path</a>
-            <a href="#">Certification</a>
+            <a href="index.php">Home</a>
+            <a href="Ujian/add_question.php">Tambah Soal</a>
+            <a href="Certif/sertif.php">Sertifikat</a>
+            <a href="Ujian/ujianMode.php">test</a>
         </div>
         <div class="right">
-            <span>Hi, [Nama User]</span>
+            <span>Hi, <strong class="text-black"><?php echo htmlspecialchars($nama); ?></strong></span>
         </div>
     </div>
 
@@ -151,17 +162,14 @@
         </div>
 
         <div class="learning-path">
-            <!-- Steps (Left Column) -->
             <div class="steps">
-                <!-- Step 1 -->
-                <div class="path-step" onclick="location.href='modul1.php';" style="cursor: pointer;">
+                <div class="path-step">
                     <h3>Langkah 1: Memulai Pemrograman dengan Kotlin</h3>
                     <p>Durasi: 50 Jam</p>
                     <p>Tingkat: Dasar</p>
                     <p>132 Modul, 68,825 Siswa Terdaftar</p>
                 </div>
 
-                <!-- Step 2 -->
                 <div class="path-step">
                     <h3>Langkah 2: Belajar Membuat Aplikasi Android untuk Pemula</h3>
                     <p>Durasi: 60 Jam</p>
@@ -178,21 +186,17 @@
                 </div>
             </div>
 
-            <!-- Descriptions (Right Column) -->
             <div class="descriptions">
-                <!-- Description for Step 1 -->
                 <div class="info-section">
                     <h3>Langkah Pertama</h3>
                     <p>Langkah pertama untuk menjadi seorang Android Developer dengan mempelajari bahasa yang direkomendasikan oleh Google.</p>
                 </div>
 
-                <!-- Description for Step 2 -->
                 <div class="info-section">
                     <h3>Membuat Aplikasi Sendiri</h3>
                     <p>Buat aplikasi pertama dengan memahami dasar-dasar membuat tampilan dan logika aplikasi.</p>
                 </div>
 
-                <!-- Description for Step 3 -->
                 <div class="info-section">
                     <h3>Membangun Fundamental</h3>
                     <p>Perdalam keahlianmu di dunia pemrograman Android dengan mempelajari cara membuat aplikasi yang dapat mengirim data dari server ke database.</p>

@@ -22,9 +22,8 @@ if(isset($_POST['daftar'])){
         die("Gagal upload foto");
     } 
 
-    // Query 
     $sql = "INSERT INTO user_management (nama, email, password, ktm, institusi, umur, role, foto) 
-            VALUES ('$nama', '$email', '$password', '$ktm', '$institusi', '$umur', '$role', '$date_photo')";
+            VALUES ('$nama', '$email', '$password', '$ktm', '$institusi', '$umur', '$role', '$foto')";
     $query = mysqli_query($db, $sql);
 
     if($query) {

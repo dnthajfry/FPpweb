@@ -1,4 +1,12 @@
+<?php
+session_start();
 
+if (isset($_SESSION['user_name'])) {
+    $nama = $_SESSION['user_name'];
+} else {
+    $nama = "Tamu";
+}
+?>
 
 
 <!DOCTYPE html>
@@ -127,7 +135,7 @@
     <div class="navbar">
         <div class="navbar-left">
             <a href="#">Nama Website</a>
-            <a href="home.php">Home</a>
+            <a href="index.php">Home</a>
             <a href="learning.php">Learning Path</a>
             <a href="sertifikasi.php">Sertifikasi</a>
         </div>
@@ -143,7 +151,7 @@
             <h2>Data Sertifikasi</h2>
             <div class="user-info">
                 <h3>Nama:</h3>
-                <p><?php echo htmlspecialchars($user['name']); ?></p>
+                <p><?php echo htmlspecialchars($user['nama']); ?></p>
 
                 <h3>Mata Pelajaran:</h3>
                 <p><?php echo htmlspecialchars($certification['course_name']); ?></p>
