@@ -1,8 +1,4 @@
-<?php
 
-$sqlCourses = "SELECT * FROM Courses";
-$resultCourses = $conn->query($sqlCourses);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +12,7 @@ $resultCourses = $conn->query($sqlCourses);
     <div class="container my-5">
         <h1>Daftar Materi</h1>
         <div class="mb-3">
-            <a href="Course/tambah_course.php" class="btn btn-success">Tambah Materi</a>
+            <a href="tambah_course.php" class="btn btn-success">Tambah Materi</a>
         </div>
         <table class="table table-striped">
             <thead>

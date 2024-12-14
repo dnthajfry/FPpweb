@@ -2,7 +2,7 @@
 
 if (basename($_SERVER['PHP_SELF']) === 'exam.php') {
     $course_id = $_GET['course_id'];
-    $sqlExam = "SELECT * FROM Exams WHERE course_id = $course_id";
+    $sqlExam = "SELECT * FROM Ujian WHERE course_id = $course_id";
     $resultExam = $conn->query($sqlExam);
 
     ?>

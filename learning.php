@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user_name'])) {
+    $nama = $_SESSION['user_name'];
+} else {
+    $nama = "Tamu";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,11 +145,12 @@
     <div class="navbar">
         <div class="left">
             <a href="index.php">Home</a>
-            <a href="#">Learning Path</a>
-            <a href="#">Certification</a>
+            <a href="Ujian/add_question.php">Tambah Soal</a>
+            <a href="Certif/sertif.php">Sertifikat</a>
+            <a href="Ujian/ujianMode.php">test</a>
         </div>
         <div class="right">
-            <span>Hi, [Nama User]</span>
+            <span>Hi, <strong class="text-black"><?php echo htmlspecialchars($nama); ?></strong></span>
         </div>
     </div>
 
@@ -151,9 +162,7 @@
         </div>
 
         <div class="learning-path">
-            <!-- Steps (Left Column) -->
             <div class="steps">
-                <!-- Step 1 -->
                 <div class="path-step">
                     <h3>Langkah 1: Memulai Pemrograman dengan Kotlin</h3>
                     <p>Durasi: 50 Jam</p>
@@ -161,7 +170,6 @@
                     <p>132 Modul, 68,825 Siswa Terdaftar</p>
                 </div>
 
-                <!-- Step 2 -->
                 <div class="path-step">
                     <h3>Langkah 2: Belajar Membuat Aplikasi Android untuk Pemula</h3>
                     <p>Durasi: 60 Jam</p>
