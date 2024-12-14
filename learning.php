@@ -154,7 +154,7 @@
             <!-- Steps (Left Column) -->
             <div class="steps">
                 <!-- Step 1 -->
-                <div class="path-step">
+                <div class="path-step" onclick="location.href='modul1.php';" style="cursor: pointer;">
                     <h3>Langkah 1: Memulai Pemrograman dengan Kotlin</h3>
                     <p>Durasi: 50 Jam</p>
                     <p>Tingkat: Dasar</p>
