@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 $sqlCourses = "SELECT * FROM Courses";
 $resultCourses = $conn->query($sqlCourses);
