@@ -25,19 +25,19 @@ if (isset($_SESSION['user_name'])) {
             <a href="../learning.php" class="hover:underline">Learning Path</a>
         </nav>
         <div>
-            <a href="#" class="mr-4">Selamat Datang <strong><?php echo htmlspecialchars($nama); ?></strong></a>
+        <a href="#" class="mr-4">Selamat Datang <strong><?php echo htmlspecialchars($nama); ?></strong></a>
         </div>
     </header>
 
     <section class="max-w-5xl mx-auto my-10 p-4 bg-white rounded-lg shadow-md">
         <div class="text-center">
-            <img src="headSertif.png" alt="Header" class="mx-auto mb-6 rounded-lg shadow-lg">
+            <img src="belumsertif.png" alt="Header" class="mx-auto mb-6 rounded-lg shadow-lg">
 
             <h2 class="text-2xl font-bold text-gray-800 mb-5">
-                Selamat anda lulus dan berhasil mendapat sertifikat
+                Ingin mendapat Sertif? selesaikan Modul dan Kerjakan Test terlebih dahulu ya..
             </h2>
-            <a href="generate_sertif.php" class="bg-teal-500 text-white px-4 py-3 rounded-lg font-bold mb-4">
-                Lihat Sertifikat
+            <a href="../learning.php" class="bg-teal-500 text-white px-4 py-3 rounded-lg font-bold mb-4">
+                Lihat Daftar Modul tersedia
             </a>
 
             <p class="text-gray-600 text-lg leading-relaxed pt-6">

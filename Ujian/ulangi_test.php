@@ -5,7 +5,7 @@ session_start();
 unset($_SESSION['answers']); // Menghapus jawaban yang sudah disimpan di sesi
 unset($_SESSION['score']); //menghapus session skor
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    header("Location: ujianMode.php?page=1");
+    header("Location: ujianBaru.php?page=1");
     exit;
 }
 ?>

@@ -6,6 +6,7 @@ if (isset($_SESSION['user_name'])) {
 } else {
     $nama = "Tamu";
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +15,7 @@ if (isset($_SESSION['user_name'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Global Styles */
         body {
@@ -141,20 +143,56 @@ if (isset($_SESSION['user_name'])) {
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="left">
-            <a href="index.php">Home</a>
-            <a href="Ujian/add_question.php">Tambah Soal</a>
-            <a href="Certif/sertif.php">Sertifikat</a>
-            <a href="Ujian/ujianMode.php">test</a>
-        </div>
-        <div class="right">
-            <span>Hi, <strong class="text-black"><?php echo htmlspecialchars($nama); ?></strong></span>
-        </div>
-    </div>
+    <header class="bg-teal-500 text-white py-4 px-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">OjoLaliSinau</h1>
+        <nav class="flex gap-4">
+            <a href="index.php" class="hover:underline">Home</a>
+            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') : ?>
+            <a href="Ujian/add_question.php" class="hover:underline text-red-200">Tambah Soal</a>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['score'])) : ?>
+            <a href="Certif/sertif.php" class="hover:underline">Sertifikat</a>
+            <?php else : ?>
+            <a href="Certif/belumsertif.php" class="hover:underline">Sertifikat</a>
+            <?php endif; ?>
 
-    <!-- Container -->
+            <a href="Ujian/ujianBaru.php" class="hover:underline">Test</a>
+        </nav>
+        <div>
+            <a href="#" class="mr-4">Selamat Datang<strong><?php echo htmlspecialchars($nama); ?></strong></span></a>
+        </div>
+    </header>
+
+
+    <section>
+    <div class="container">
+        <section class="max-w-5xl mx-auto p-4">
+            <div class="title">
+            <h1>Dasar Pemrograman</h1>
+            <p class="title">Kurikulum dirancang dengan mendasarkan pengajaran dari hal mendasar dalam coding.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="Modul/modulStrukDat.php" class="bg-white rounded-lg shadow-md p-4 flex hover:bg-gray-100 transition">
+            <img src="Modul/StrukturData.png" alt="Modul 1" class="w-32 h-32 rounded-lg mr-4">
+            <div>
+                <h4 class="text-lg font-semibold mb-2">Class Struktur Data</h4>
+                <p class="text-sm text-gray-600 mb-2">Pengajar pilihan dari RPL 2023</p>
+                <p class="text-sm text-gray-500">with Mas Tata dan Mas Aldin</p>
+            </div>
+        </a>
+
+        <a href="Modul/modulDatabaseSystem.php" class="bg-white rounded-lg shadow-md p-4 flex hover:bg-gray-100 transition">
+            <img src="Modul/DatabaseSys.png" alt="Modul 2" class="w-32 h-32 rounded-lg mr-4">
+            <div>
+                <h4 class="text-lg font-semibold mb-2">Class Basis Data</h4>
+                <p class="text-sm text-gray-600 mb-2">Pengajar pilihan dari RPL 2023</p>
+                <p class="text-sm text-gray-500">with Mas Tata dan Mas Ammar</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+    <section>
     <div class="container">
         <div class="title">
             <h1>Android Developer</h1>
@@ -164,25 +202,24 @@ if (isset($_SESSION['user_name'])) {
         <div class="learning-path">
             <div class="steps">
                 <div class="path-step">
-                    <h3>Langkah 1: Memulai Pemrograman dengan Kotlin</h3>
-                    <p>Durasi: 50 Jam</p>
+                    <a href="Modul/modulAndroid1.php" class="bg-white rounded-lg shadow-md p-4 flex hover:bg-gray-100 transition">Modul 1: Memulai Pemrograman dengan Kotlin</a>
+                    <p>Durasi: `30 Menit`</p>
                     <p>Tingkat: Dasar</p>
-                    <p>132 Modul, 68,825 Siswa Terdaftar</p>
+                    <p>3 Modul, 68,825 Siswa Terdaftar</p>
                 </div>
 
-                <div class="path-step">
-                    <h3>Langkah 2: Belajar Membuat Aplikasi Android untuk Pemula</h3>
-                    <p>Durasi: 60 Jam</p>
+                <div class="path-step" >
+                    <a href="Modul/modulAndroid2.php" class="bg-white rounded-lg shadow-md p-4 flex hover:bg-gray-100 transition">Modul 2: Belajar Membuat Aplikasi Android untuk Pemula</a>
+                    <p>Durasi: 1 Jam</p>
                     <p>Tingkat: Pemula</p>
-                    <p>49 Modul, 125,008 Siswa Terdaftar</p>
+                    <p>3 Modul, 125,008 Siswa Terdaftar</p>
                 </div>
 
-                <!-- Step 3 -->
-                <div class="path-step">
-                    <h3>Langkah 3: Belajar Fundamental Aplikasi Android</h3>
-                    <p>Durasi: 140 Jam</p>
+                <div class="path-step" >
+                    <a href="Modul/modulAndroid3.php" class="bg-white rounded-lg shadow-md p-4 flex hover:bg-gray-100 transition">Modul 3: Belajar Fundamental Aplikasi Android</a>
+                    <p>Durasi: 1 Jam</p>
                     <p>Tingkat: Menengah</p>
-                    <p>107 Modul, 43,217 Siswa Terdaftar</p>
+                    <p>3 Modul, 43,217 Siswa Terdaftar</p>
                 </div>
             </div>
 
@@ -204,5 +241,6 @@ if (isset($_SESSION['user_name'])) {
             </div>
         </div>
     </div>
+    </section>
 </body>
 </html>

@@ -78,13 +78,13 @@
             <li><a href="modul1.php">Modul 1: Pengantar Kotlin</a></li>
             <li><a href="modul2.php">Modul 2: Membuat Aplikasi Android</a></li>
             <li><a href="modul3.php">Modul 3: Fundamental Aplikasi Android</a></li>
-            <li><a href="modul4.php">Modul 4: Proyek Lanjutan</a></li>
+            <li><a href="modul4.php">Modul 4: Struktur Pengembangan Andorid App</a></li>
         </ul>
     </div>
 
     <!-- Kontainer Utama -->
     <div class="container">
-        <h1>Modul 3: Fundamental Aplikasi Android</h1>
+        <h1>Modul 4: Struktur Pengembangan Andorid App</h1>
 
         <p>Android adalah salah satu sistem operasi paling populer di dunia, yang digunakan pada berbagai perangkat seperti smartphone, tablet, dan perangkat berbasis IoT. Untuk menjadi pengembang yang sukses, pemahaman tentang dasar-dasar pengembangan aplikasi Android adalah hal yang penting.</p>
 

@@ -263,16 +263,13 @@ button.setOnClickListener(new View.OnClickListener() {
 </p>
         </div>
 
-     <!-- Bottom Bar -->
+     
         <div class="bottom-bar">
         <span>Modul 2: Membuat Aplikasi Android untuk Pemula</span>
         </div>
     </div>
-    <!-- Button Kembali ke Halaman Utama -->
-    <button class="back-button" onclick="window.location.href='modul1.php'">Kembali ke Modul1</button>
-
-<!-- Button Lanjut ke Modul 2 -->
-<button class="next-button" onclick="window.location.href='modul3.php'">Lanjut ke Modul 3</button>
+    <button class="back-button" onclick="window.location.href='modulAndroid1.php'">Kembali ke Modul 1</button>
+    <button class="next-button" onclick="window.location.href='modulAndroid3.php'">Lanjut ke Modul 3</button>
 
 </body>
 </body>

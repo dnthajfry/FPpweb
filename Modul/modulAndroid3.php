@@ -415,9 +415,9 @@ app/
     <div class="bottom-bar">
         <span>Modul 3: Belajar Fundamental Aplikasi Android</span>
         </div>
-    <!-- Tombol Navigasi -->
-    <button class="back-button" onclick="window.location.href='modul2.php'">Kembali ke Modul 2</button>
-    <button class="next-button" onclick="window.location.href='../index.php">Kembali ke Halaman Utama</button>
+    <button class="back-button" onclick="window.location.href='modulAndroid2.php'">Kembali ke Modul 2</button>
+    <button class="next-button" onclick="window.location.href='../Ujian/ujianBaru.php'">Kerjakan Test</button>
+    
 
 </body>
 </html>

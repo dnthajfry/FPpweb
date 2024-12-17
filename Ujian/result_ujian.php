@@ -4,7 +4,7 @@ include __DIR__ . '/../config.php';
 session_start();
 
 if (!isset($_SESSION['answers']) || empty($_SESSION['answers'])) {
-    header("Location: ujianMode.php");
+    header("Location: ujianBaru.php");
     exit;
 }
 
