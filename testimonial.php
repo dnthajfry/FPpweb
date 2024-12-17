@@ -118,24 +118,44 @@ function displayTestimonialForm() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testimonial Page</title>
-    <!-- Tambahkan Bootstrap CSS -->
+    <title>Testimoni Pengguna</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #49BBBD;">
+        <div class="container py-3">
+            <a class="navbar-brand me-3" href="index.php">Ojo Lali Sinau</a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.php">Home</a>
+                <a class="nav-link" href="learning.php">Learning Path</a>
+                <?php if (isset($_SESSION['score'])) : ?>
+                <a class="nav-link" href="Certif/sertif.php">Sertifikat</a>
+                <?php else : ?>
+                <a class="nav-link" href="Certif/belumsertif.php">Sertifikat</a>
+                <?php endif; ?>
+            </div>
+            <div class="ms-auto d-flex">
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <span class="navbar-text me-2">Selamat Datang, <strong><?php echo htmlspecialchars($nama); ?></strong></span>
+                    <a class="btn btn-outline-light" href="logout.php">Logout</a>
+                <?php else: ?>
+                    <a class="btn btn-outline-light me-2" href="form-masuk.php">Masuk</a>
+                    <a class="btn btn-outline-light" href="form-daftar.php">Daftar</a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </nav>
+
     <div class="container py-5">
         <h1 class="text-center mb-4">Testimonial Terbaik</h1>
         
-        <!-- Bagian untuk menampilkan testimonial -->
         <?php displayTestimonial(); ?>
         
         <hr class="my-4">
         
-        <!-- Bagian untuk menampilkan form -->
         <?php displayTestimonialForm(); ?>
     </div>
 
-    <!-- Tambahkan Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
