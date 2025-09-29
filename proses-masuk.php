@@ -6,8 +6,11 @@ if (isset($_POST['login'])) {
     $email = $_POST['Email'];
     $password = $_POST['Password']; 
 
-    $sql = "SELECT * FROM user_management WHERE Email = '$email'";
-    $query = mysqli_query($db, $sql);
+    $sql = "SELECT * FROM user_management WHERE Email = ?";
+    $stmt = mysqli_prepare($db, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    $query = mysqli_stmt_get_result($stmt);
 
     if (mysqli_num_rows($query) > 0) {
         $user = mysqli_fetch_assoc($query);

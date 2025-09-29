@@ -2,8 +2,11 @@
 
 if (basename($_SERVER['PHP_SELF']) === 'exam.php') {
     $course_id = $_GET['course_id'];
-    $sqlExam = "SELECT * FROM Ujian WHERE course_id = $course_id";
-    $resultExam = $conn->query($sqlExam);
+    $sqlExam = "SELECT * FROM Ujian WHERE course_id = ?";
+    $stmt = $conn->prepare($sqlExam);
+    $stmt->bind_param("i", $course_id);
+    $stmt->execute();
+    $resultExam = $stmt->get_result();
 
     ?>
     <!DOCTYPE html>
