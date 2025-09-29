@@ -23,8 +23,10 @@ if(isset($_POST['daftar'])){
     } 
 
     $sql = "INSERT INTO user_management (nama, email, password, ktm, institusi, umur, role, foto) 
-            VALUES ('$nama', '$email', '$password', '$ktm', '$institusi', '$umur', '$role', '$foto')";
-    $query = mysqli_query($db, $sql);
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = mysqli_prepare($db, $sql);
+    mysqli_stmt_bind_param($stmt, 'ssssssss', $nama, $email, $password, $ktm, $institusi, $umur, $role, $foto);
+    $query = mysqli_stmt_execute($stmt);
 
     if($query) {
         header('Location: index.php?status=sukses');

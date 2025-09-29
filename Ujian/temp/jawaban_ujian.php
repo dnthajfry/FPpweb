@@ -9,7 +9,10 @@ $totalQuestions = 0;
 // Perhitungan skor dari jawaban si user
 foreach ($_POST as $question_id => $user_answer) {
     $question_id = str_replace("question_", "", $question_id);
-    $result = $db->query("SELECT correct_answer FROM questions WHERE id=$question_id");
+    $stmt = $db->prepare("SELECT correct_answer FROM questions WHERE id=?");
+    $stmt->bind_param("i", $question_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
     $correct_answer = $result->fetch_assoc()['correct_answer'];
 
     if ($user_answer === $correct_answer) {
