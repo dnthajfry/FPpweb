@@ -118,13 +118,13 @@ $result = $stmt->get_result();
 
 <div class="container mt-5 mb-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
-    <h3>Soal <?php echo $page; ?> dari <?php echo $_SESSION['total_questions']; ?></h3>
+    <h3>Soal <?php echo htmlentities($page, ENT_QUOTES); ?> dari <?php echo htmlentities($_SESSION['total_questions'], ENT_QUOTES); ?></h3>
         <div class="progress" style="width: 200px;">
             <div class="progress-bar" role="progressbar"
-                style="width: <?php echo ($page / $_SESSION['total_questions']) * 100; ?>%;"
+                style="width: <?php echo htmlentities(($page / $_SESSION['total_questions']) * 100, ENT_QUOTES); ?>%;"
                 aria-valuenow="<?php echo $page; ?>"
                 aria-valuemin="0"
-                aria-valuemax="<?php echo $_SESSION['total_questions']; ?>">
+                aria-valuemax="<?php echo htmlentities($_SESSION['total_questions'], ENT_QUOTES); ?>">
                 <?php echo $page; ?>/<?php echo $_SESSION['total_questions']; ?>
             </div>
         </div>
